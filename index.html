@@ -36,10 +36,17 @@
       }
       /* CSS для блока вывода результатов */
       #output-container {
+        margin: 0 auto;
         margin-top: 50px;
         text-align: center;
         color: white;
         font-size: 18px;
+        border: 3px solid black;
+        border-radius: 8px;
+        width: 50%;
+        align-self: center;
+        align-items: center;
+        height: 100px
       }
 
       /* CSS для блока на левой стороне */
@@ -126,7 +133,7 @@
       <input type="text" id="input-text" placeholder="Введите текст">
       <input type="submit" id="submit-button" value="Отправить">
     </div>
-    <div id="output-container"></div>
+    <div id="output-container">Тут появится вывод</div>
     <script src="script.js"></script>
     <script>
       const menuIcon = document.getElementById('menu-icon');

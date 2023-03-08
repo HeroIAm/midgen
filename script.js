@@ -1,7 +1,7 @@
 const inputText = document.getElementById('input-text');
 const outputContainer = document.getElementById('output-container');
 const submitButton = document.getElementById('submit-button');
-const API_KEY = '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';
+const API_KEY = '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';
 
 submitButton.addEventListener('click', async () => {
   const text = inputText.value;
@@ -14,7 +14,7 @@ submitButton.addEventListener('click', async () => {
       'Authorization': `Bearer ${API_KEY}`,
     },
     body: JSON.stringify({
-      prompt: 'Переведи текст на английский и сделай из него промпт для нейросети MidJourney. Вот примеры: "cute yellow star logo, vector, flat 2d, company logo, sing style", "simple logo design of cute husky dog, vector, flat 2d, company logo, sing style", "vector cherry logo". Текст: '+text+'.',
+      prompt: 'Переведи текст на английский и сделай из него промпт для векторного логотипа. Вот примеры: " star logo, vector, flat 2d, company logo, sing style", "simple logo design of husky dog, vector, flat 2d, company logo, sing style". начинай сообщение с буквы Текст: '+text+'.',
       max_tokens: 200,
       n: 1,
     }),
