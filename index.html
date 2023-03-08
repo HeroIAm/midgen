@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MidGen</title>
+    <style>
+      /* CSS для заднего фона */
+      body {
+        background-color: #333;
+        background-image: url('animation.gif');
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      /* CSS для блока ввода текста и кнопки */
+      #input-container {
+        margin-top: 50px;
+        text-align: center;
+      }
+      input[type="text"] {
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        width: 500px;
+        font-size: 18px;
+        background-color: #111;
+        color: #fff;
+      }
+      input[type="submit"] {
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        background-color: #4CAF50;
+        color: white;
+        font-size: 18px;
+        margin-left: 10px;
+        cursor: pointer;
+      }
+      /* CSS для блока вывода результатов */
+      #output-container {
+        margin-top: 50px;
+        text-align: center;
+        color: white;
+        font-size: 18px;
+      }
+
+      /* CSS для блока на левой стороне */
+      #left-block {
+        position: fixed;
+        top: 0;
+        left: -500px; /* начальное положение блока */
+        width: 500px;
+        height: 100%;
+        background-color: #222;
+        border-radius: 8px;
+        z-index: 1; /* чтобы блок был выше остальных элементов */
+        box-shadow: 3px 0px 50px 0.5px #000 ;
+        transition: left 0.3s ease-in-out; /* плавный переход при выдвижении */
+      }
+      #left-block.open {
+        left: 0; /* новое положение блока при выдвижении */
+        
+      }
+      #menu-icon {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  
+  width: 30px;
+  height: 30px;
+  cursor:pointer;
+  z-index: 2;
+  
+  transition: left 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+.govno{
+  background-color: #111;
+  width: 500px;
+  height:70px;
+  border-radius: 8px;
+  box-shadow: 3px 0px 50px 0.5px #000 ;
+}
+.how{
+  position:relative;
+  color:#fff;
+  margin: 0;
+  top:25px;
+  left:35%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+.desc{
+  position:relative;
+  color:#fff;
+  width:350px;
+  margin: 0 auto;
+  top: 20%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  word-wrap: break-word;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+#menu-icon.open {
+  position: fixed;
+  top: 20px;
+  left: 450px;
+  
+  width: 30px;
+  height: 30px;
+  cursor:pointer;
+  filter: invert(100%);
+  transition: left 0.3s ease-in-out, filter 0.3s ease-in-out;
+
+      }
+    </style>
+  </head>
+  <body>
+    <div id="left-block">
+      <div class="govno">
+        <span class="how">Как это работает?</span>
+      </div>
+      <span class="desc">Вы вводите несколько слов с описанием нужного дизайна, а затем бот подбирает вам нужный промпт, который вы можете вставить в MidJourney</span>
+    </div>
+      <img src="hamburger.png" width="30" height="30" alt="Меню" id="menu-icon">
+    <div id="input-container">
+      <input type="text" id="input-text" placeholder="Введите текст">
+      <input type="submit" id="submit-button" value="Отправить">
+    </div>
+    <div id="output-container"></div>
+    <script src="script.js"></script>
+    <script>
+      const menuIcon = document.getElementById('menu-icon');
+      const leftBlock = document.getElementById('left-block');
+      const menuBlock = document.getElementById('menu-icon');
+      
+      menuIcon.addEventListener('click', () => {
+      leftBlock.classList.toggle('open');
+      menuBlock.classList.toggle('open');
+      });
+      </script>
+  </body>
+</html>
