@@ -1,7 +1,7 @@
 const inputText = document.getElementById('input-text');
 const outputContainer = document.getElementById('output-container');
 const submitButton = document.getElementById('submit-button');
-const API_KEY = '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';
+const API_KEY = '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';
 
 submitButton.addEventListener('click', async () => {
   const text = inputText.value;
